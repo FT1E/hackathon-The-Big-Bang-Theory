@@ -51,17 +51,9 @@ a{
 }
 
 #slika {
-    width: 40%;
-}
-
-img {
     
 }
 
-#puz {
-    width: 100%;
-    padding: 3%;
-}
 
 footer {
     background-color:#B2AC88;
@@ -69,10 +61,6 @@ footer {
     align-items: center;
 }
 
-.logo {
-    height: 10%;
-    width: 7%;
-}
 
 table {
     color: antiquewhite;
