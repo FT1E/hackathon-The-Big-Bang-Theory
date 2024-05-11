@@ -1,6 +1,6 @@
 
 
-let container = document.getElementById('dating1');
+let container = document.body;
 let c_height = container.style.height;
 let c_width= container.style.width;
 
@@ -9,7 +9,7 @@ let c_width= container.style.width;
 
 let bird = document.createElement("img");
 bird.src = "./media/hummingbird.gif";
-bird.style.position = "relative";
+bird.style.position = "absolute";
 bird.style.height = "50px";
 bird.style.width = "50px";
 
@@ -55,7 +55,7 @@ let interval = setInterval(() => {
 
         console.log(`pulling y_pos = ${y_pos} `)
 
-        ad_iframe.style.height = `${y_pos}%`;
+        ad_iframe.style.height = `${y_pos * container.width / 100}px`;
         if(y_pos >= 90){
             ad_iframe.style.height = '100%';
         }
