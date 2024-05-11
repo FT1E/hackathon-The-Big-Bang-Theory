@@ -17,9 +17,7 @@
         </header>
 
         <div class="grid-container">
-            <div id="dating1">  
-                <img src="intro.gif" alt="man looking and blushing" id="intro">
-            </div>
+            <div id="dating1"></div>
     
             <div id="text">
                <p> Have you ever wanted to learn how to <span style="font-weight: bold; color: orange;">cook</span> but never knew how to start<span style="font-weight: bold;">?</span> </p>
@@ -30,9 +28,7 @@
                <p> Grab an <span style="font-weight: bold; color: orange;">apron</span> and let's get started! </p>
             </div>
     
-            <div id="dating2">
-                <img src="introgirl.gif" alt="woman looking and blushing" id="introgirl" >
-            </div>
+            <div id="dating2"></div>
         </div>
 
         <footer>
@@ -48,35 +44,7 @@
             </table>
         </footer>
 
-        <script>
-            setTimeout(loopGifs, 5000);
-
-            const introGif = document.getElementById("intro");
-            const introGirlGif = document.getElementById("introgirl");
-           
-            function loopGifs() {
-                const dating1Div = document.getElementById("dating1");
-                const dating2Div = document.getElementById("dating2");
-        
-                
-                const repeatGif = document.createElement("img");
-                const repeatGirlGif = document.createElement("img");
-        
-                
-                repeatGif.src = "repeat.gif";
-                repeatGif.alt = "repeat";
-                repeatGirlGif.src = "repeatgirl.gif";
-                repeatGirlGif.alt = "repeatgirl";
-        
-                
-                dating1Div.appendChild(repeatGif);
-                dating2Div.appendChild(repeatGirlGif);
-
-                dating1Div.removeChild(introGif);
-                dating2Div.removeChild(introGirlGif);
-            }
-    
-        </script>
+        <script src="ad1.js"></script>
         
 
     </body>

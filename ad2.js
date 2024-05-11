@@ -11,6 +11,9 @@ snailGif.src = "media/snail.gif";
 
 const ad_iframe = document.createElement("iframe");
 ad_iframe.src = "https://www.sephora.com";
+
+ad_iframe.style.opacity = '0';
+
 let c_width = Number.parseInt(container.offsetWidth);
 let c_height = Number.parseInt(ad_iframe.height = "100px")
 ad_iframe.style.width = "0%";
@@ -87,9 +90,10 @@ snailGif.onmouseover = () => {
         dir = -1;
         snailGif.style.transform = `scaleX(${dir})`;
     }
-
+    
     const interv = setInterval(() => {
         if(position <= 2){
+            ad_iframe.style.opacity = '1';
             can_pull = true;
             clearInterval(interv);
         }
