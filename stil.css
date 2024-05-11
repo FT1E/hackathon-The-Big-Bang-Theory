@@ -37,27 +37,22 @@ a{
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;   
+    display: flex;
+    justify-content: space-around;  
 }
 
 #dating1 {
-    float: left;
-   
-    padding: 5%;
+    flex-basis: 15%; 
 }
 
 #text {
-    float: left;
-   
     text-align: center;
     font-size: 120%;
+    flex: 1;
 }
 
 #dating2 {
-    float: left;
-    
-    padding: 5%;
+    flex-basis: 15%; 
 }
 
 .slika1 {

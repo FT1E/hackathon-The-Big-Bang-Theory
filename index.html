@@ -17,8 +17,8 @@
         </header>
 
         <div class="grid-container">
-            <div id="dating1">
-            
+            <div id="dating1">  
+                <img src="intro.gif" alt="man looking and blushing" id="intro">
             </div>
     
             <div id="text">
@@ -31,7 +31,7 @@
             </div>
     
             <div id="dating2">
-                
+                <img src="introgirl.gif" alt="woman looking and blushing" id="introgirl" >
             </div>
         </div>
 
@@ -47,6 +47,37 @@
                 </tr>
             </table>
         </footer>
+
+        <script>
+            setTimeout(loopGifs, 5000);
+
+            const introGif = document.getElementById("intro");
+            const introGirlGif = document.getElementById("introgirl");
+           
+            function loopGifs() {
+                const dating1Div = document.getElementById("dating1");
+                const dating2Div = document.getElementById("dating2");
+        
+                
+                const repeatGif = document.createElement("img");
+                const repeatGirlGif = document.createElement("img");
+        
+                
+                repeatGif.src = "repeat.gif";
+                repeatGif.alt = "repeat";
+                repeatGirlGif.src = "repeatgirl.gif";
+                repeatGirlGif.alt = "repeatgirl";
+        
+                
+                dating1Div.appendChild(repeatGif);
+                dating2Div.appendChild(repeatGirlGif);
+
+                dating1Div.removeChild(introGif);
+                dating2Div.removeChild(introGirlGif);
+            }
+    
+        </script>
+        
 
     </body>
 </html>
