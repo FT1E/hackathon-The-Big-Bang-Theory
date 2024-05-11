@@ -5,10 +5,12 @@
 
 
 // container is the container in which the ad is to be shown, i.e. the ad-space
-let container = document.getElementById('div1');
+// export let container;
+
+// setTimeout(start, 1000);
 
 
-function start(){
+export function start(container){
 
 
     let c_height = Number.parseInt(container.offsetHeight);
@@ -101,7 +103,7 @@ function start(){
         }
         
         // so it goes up in a more steep and faster direction
-        y_vel = 1;
+        y_vel = 0.7;
         
         const interv = setInterval(() => {
             if(y_pos <= 5){
@@ -121,4 +123,9 @@ function start(){
 
     container.append(bird);
     container.append(ad_iframe);
+}
+
+export function setCookie(){
+    // empty function for now
+    // 
 }

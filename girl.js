@@ -1,12 +1,19 @@
 // the file importing the module needs to set container with ID
 
 
-let container = document.getElementById('div2'); 
+// export let container; 
 
 const girl = document.createElement('img');
+girl.style.width = "100%";
 
 
-function start(){
+// setCookie();
+
+// setTimeout(start, 2000);    // give time for other ads to load (in case the boy ad is shown)
+
+
+
+export function start(container){
     if(checkBoy()){
         // GIRL WITH BOY
 
@@ -22,45 +29,13 @@ function start(){
     }
 
 
-    container.appendChild(aloneGirl);
+    container.appendChild(girl);
 }
 
 
-// ALONE GIRL
 
-// const aloneGirl = document.createElement("img");
-// aloneGirl.id = "aloneGirl";
-// aloneGirl.src = "C:/Users/PC-2/Desktop/Hakaton '24/womanalone.gif";
-// aloneGirl.style.position = "relative";
-
-// GIRL WITH A BOY
-
-// const introgirl = document.createElement("img");
-// introgirl.id = "introg";
-// introgirl.src = "C:/Users/PC-2/Desktop/Hakaton '24/introgirl.gif";
-// introgirl.style.position = "relative";
-//introgirl.style.width = 33%;
-
-
-
-// container1.appendChild(introboy);
-// container2.appendChild(introgirl);
-
-
-//const introBoyGif = document.getElementById("intob");
-//const introGirlGif = document.getElementById("introg");
-           
-
-// function loopGifs() {
-//    introboy.src = "C:/Users/PC-2/Desktop/Hakaton '24/repeatboy.gif";
-//    introgirl.src = "C:/Users/PC-2/Desktop/Hakaton '24/repeatgirl.gif";
-// }
-
-
-
-
-function setCookie(){
-    document.cookie = `girl=true; expires=${60 * 1000};path=/`;  // cookie is alive for only 1 minute
+export function setCookie(){
+    document.cookie = `girl=true; expires=${10 * 1000};path=/`;  // cookie is alive for only 1 minute
 }
 
 
