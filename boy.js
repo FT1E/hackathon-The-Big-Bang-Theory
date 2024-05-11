@@ -13,7 +13,10 @@ boy.style.width = "100%";
 
 export function start(container){
     
+
+    // console.log(`checkGirl() = ${checkGirl()}`)
     
+
     if(checkGirl()){
         // BOY WITH GIRL
         
@@ -34,7 +37,7 @@ export function start(container){
 
 
 export function setCookie(){
-    document.cookie = `girl=true; expires=${10 * 1000};path=/`;  // cookie is alive for only 10 secs
+    document.cookie = `boy=true; expires=${10 * 1000};path=/`;  // cookie is alive for only 10 secs
 }
 
 

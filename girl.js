@@ -14,6 +14,9 @@ girl.style.width = "100%";
 
 
 export function start(container){
+    
+    // console.log(`checkBoy() = ${checkBoy()}`);
+    
     if(checkBoy()){
         // GIRL WITH BOY
 
