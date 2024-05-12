@@ -41,7 +41,7 @@ export function start(container){
     // variables for moving the bird
 
     // position in %
-    let [x_pos, y_pos] = [ 20 , 60];  
+    let [x_pos, y_pos] = [ 20 , ( Math.random < 0.5 ? 60 : 75)];  
 
     // direction
     let [x_dir, y_dir] = [1, -1];
@@ -76,7 +76,7 @@ export function start(container){
             
             
             if(y_pos >= bot_bound){
-                ad_iframe.style.height = '80%';
+                ad_iframe.style.height = `${bot_bound}%`;
                 clearInterval(interval);
                 container.removeChild(bird);
             }
@@ -109,7 +109,7 @@ export function start(container){
             if(y_pos <= 5){
                 can_pull = true;
                 clearInterval(interv);
-                y_vel = 1.5;
+                y_vel = 1;
                 ad_iframe.style.opacity = '1';
                 if(y_dir == -1){
                     y_dir = 1;

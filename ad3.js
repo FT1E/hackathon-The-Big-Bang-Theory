@@ -7,7 +7,7 @@
 
 // randomizing which ad to be shown
 // our ads
-let our_ads = ['bird', 'boy', 'girl'];
+let our_ads = ['boy', 'girl', 'bird'];
 
 let scripts = { 'bird' : {}, 
                 'boy' : {},
@@ -27,18 +27,39 @@ deleteCookie('girl');
 deleteCookie('boy');
 
 
-for(let i=1; i<=2; i++){
+
+for(let i=1; i<=3; i++){
     let container = document.getElementById(`div${i}`);
     
-    
-    if(Math.random() < 0.8){
+    if(container === null){
+        console.log(`container null`)
+        continue;
+    }
+        
+    if(Math.random() < 0.7){
         // our ad
+        
+
         
         // get one of our ads
         let our = our_ads[rand(0, 2)];
 
-        console.log(`chose ad ${our}`);
         
+
+
+        console.log(`chose ad ${our} on container ${i}`);
+        
+        if(our=='boy' && i==2){
+            scripts[our].boy.style.transform = "scaleX(-1)";
+        }else if(our=='girl' && i==1){
+            scripts[our].girl.style.transform = "scaleX(-1)";
+        }
+
+        if(our=='boy' && getCookie('boy') || our=='girl' && getCookie('girl')){
+            i--;
+            continue;
+        }
+
 
         // set container
         // scripts[our].container = container;
@@ -48,6 +69,9 @@ for(let i=1; i<=2; i++){
         // call start after 2 sec delay (give boy, girl ads time to both set their cookies)
         setTimeout(()=> scripts[our].start(container), 2000);
         
+
+
+
     }else{
         // boring ad
         let ad = document.createElement('img');
@@ -75,4 +99,19 @@ function setCookie(name, val, days){
 
 function deleteCookie(name){
     setCookie(name, null, null);
+}
+
+function getCookie(name){
+    const c_decoded = decodeURIComponent(document.cookie);
+    const cookies = c_decoded.split('; ');
+
+    let result = null;
+
+    cookies.forEach((element) =>{
+        if(element.startsWith(name) && element[name.length] == '='){
+            result = element.slice(name.length + 1);
+        }
+    });
+
+    return result;
 }

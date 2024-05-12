@@ -3,19 +3,81 @@
 
 // export let container; 
 
-const boy = document.createElement('img');
+export const boy = document.createElement('img');
 boy.style.width = "100%";
+boy.style.position = 'absolute';
+
+const heart = document.createElement('img');
+heart.style.height = "50px";
+heart.style.width = "50px";
+
+heart.style.zIndex = '2';
+heart.src = './media/redheart1.png';
+heart.style.position = 'absolute';
+heart.style.left = `${Number.parseInt(heart.style.width)}px`;
+
+// heart.style.left = `${Number.parseInt(boy.offsetWidth) / 2}px`;
+
+
+heart.onmouseover = () =>{
+    heart.onmouseover = "";
+
+    let scale = 100;
+
+    const interval = setInterval(() => {
+        
+        heart.style.transform = `scale(${scale / 100})`;
+        if(scale++ >= 200){
+            clearInterval(interval);
+            
+
+            let container = boy.parentElement;
+            container.removeChild(boy);
+            container.removeChild(heart);
+
+            container.append(ad_iframe);
+
+
+            const interv = setInterval(() => {
+                ad_iframe.style.opacity = "" + (+ad_iframe.style.opacity + 0.1);
+                if(+ad_iframe.style.opacity >= 1){
+                    ad_iframe.style.opacity = '1';
+                    clearInterval(interv);
+                }
+            }, 100)
+        }
+    }, 20);
+}
+
+
+let ad_iframe = document.createElement('iframe');
+ad_iframe.src = 'https://tinder.com';
+ad_iframe.style.opacity = '0';
+ad_iframe.style.zIndex = '2';
+ad_iframe.style.width = '100%';
+ad_iframe.style.height = '100%';
+ad_iframe.style.position = 'relative';
+
 
 
 // setCookie();
 // setTimeout(start, 2000);    // give time for other ads to load (in case the girl ad is shown)
 
 
+
+
+
 export function start(container){
     
 
+    console.log(`called start with container ${container}`);
+
+
+    container.style.position = 'relative';
+
     // console.log(`checkGirl() = ${checkGirl()}`)
     
+    // container.append(ad_iframe);
 
     if(checkGirl()){
         // BOY WITH GIRL
@@ -24,14 +86,25 @@ export function start(container){
         
         setTimeout(() => {
             boy.src = './media/repeatboy.gif';
+            setTimeout(() => {
+                // container.removeChild(boy);
+                container.append(heart);
+            }, 5000);
         }, 5000);
+
+
     } else{
         // ALONE BOY
         
-        boy.src = './media/boyalone.gif'; 
+        boy.src = './media/boyalone.gif';
+        setTimeout(() => {
+            // container.removeChild(boy);
+            container.append(heart);
+        }, 5000);
     }
 
-    container.append(boy)
+    container.append(boy);
+
 }
 
 
