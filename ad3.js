@@ -7,11 +7,12 @@
 
 // randomizing which ad to be shown
 // our ads
-let our_ads = ['boy', 'girl', 'bird'];
+let our_ads = ['boy', 'girl', 'bird', 'snail'];
 
 let scripts = { 'bird' : {}, 
                 'boy' : {},
                 'girl' : {},
+                'snail' : {},
             };
 
 
@@ -22,6 +23,9 @@ import * as boy from './boy.js';
 scripts.boy = boy;
 import * as girl from './girl.js';
 scripts.girl = girl;
+import * as snail from './snail.js';
+scripts.snail=snail;
+
 
 deleteCookie('girl');
 deleteCookie('boy');
@@ -42,8 +46,15 @@ for(let i=1; i<=3; i++){
 
         
         // get one of our ads
-        let our = our_ads[rand(0, 2)];
+        // let our = our_ads[rand(0, our_ads.length - 1)];
 
+        let our;
+
+        if(i==3){
+            our = our_ads[rand(2, 3)];
+        }else{
+            our = our_ads[rand(0, 2)];
+        }
         
 
 

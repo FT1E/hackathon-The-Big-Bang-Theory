@@ -44,8 +44,11 @@
 
         <div id="animationContainer"></div>
         
-        <script src="ad2.js"></script>    
-
+        <script type="module" src="snail.js"></script>
+        <script type="module">
+            import * as snail from './snail.js';
+            snail.start(document.getElementById('animationContainer'));
+        </script>
         <footer>
             <table>
                 <tr>

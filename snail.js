@@ -1,12 +1,21 @@
 
 
 
-const container = document.getElementById("animationContainer");
+// const container = document.getElementById("animationContainer");
 
+let position = 10;
+let dir = 1;
+let velocity = 0.05;
 
 const snailGif = document.createElement("img");
 snailGif.id = "snailGif";
 snailGif.src = "media/snail.gif";
+
+snailGif.style.width = "80px";
+snailGif.style.height = "80px";
+snailGif.style.position = "relative";
+let can_pull = false;
+
 
 
 const ad_iframe = document.createElement("iframe");
@@ -14,42 +23,28 @@ ad_iframe.src = "https://www.sephora.com";
 
 ad_iframe.style.opacity = '0';
 
-let c_width = Number.parseInt(container.offsetWidth);
-let c_height = Number.parseInt(ad_iframe.height = "100px")
+let c_width;
+// let c_height = Number.parseInt(ad_iframe.height = "100px")
 ad_iframe.style.width = "0%";
 // ad_iframe.style.marginLeft = "0";
 
 
-container.append(snailGif);
-container.append(ad_iframe);
+export function start(container){
 
 
-let position = 10;
-let dir = 1;
-let velocity = 0.05;
+    c_width = Number.parseInt(container.offsetWidth);
 
-snailGif.style.width = "80px";
-snailGif.style.height = "80px";
-snailGif.style.position = "relative";
+    
+    container.append(snailGif);
+    container.append(ad_iframe);
+        
+    const intervalRight = setInterval(moveSnailRight, 30);
 
-
-const intervalRight = setInterval(moveSnailRight, 30);
-
-
-
-let can_pull = false;
-
+}
 
 function moveSnailRight(){
-    
-
-    
-    
+        
     position += (dir * velocity);
-
-    // const screenWidth = window.innerWidth;
-    // const snailWidth = snailGif.offsetWidth;
-    // const maxPosition = screenWidth - snailWidth;
 
     
     
@@ -75,8 +70,6 @@ function moveSnailRight(){
     // Reverse direction if the snail reaches the edges
     if (position >= 95 || position <= 0) {
         dir *= -1;
-        // Change image src
-        // snailGif.src = (position <= 0) ? "media/snail.gif" : "media/lsnail.gif";
         snailGif.style.transform = `scaleX(${dir})`;
     }
 }
@@ -99,3 +92,8 @@ snailGif.onmouseover = () => {
         }
     }, 30); 
 };
+
+
+export function setCookie(){
+    
+}
