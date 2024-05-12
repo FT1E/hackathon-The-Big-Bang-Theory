@@ -25,20 +25,24 @@ ad_iframe.style.opacity = '0';
 
 let c_width;
 // let c_height = Number.parseInt(ad_iframe.height = "100px")
+ad_iframe.style.height = '100px';
 ad_iframe.style.width = "0%";
 // ad_iframe.style.marginLeft = "0";
+
+
+let intervalRight;
 
 
 export function start(container){
 
 
     c_width = Number.parseInt(container.offsetWidth);
-
+    console.log(`c_width is ${c_width}px`);
     
     container.append(snailGif);
     container.append(ad_iframe);
         
-    const intervalRight = setInterval(moveSnailRight, 30);
+    intervalRight = setInterval(moveSnailRight, 30);
 
 }
 
@@ -58,9 +62,9 @@ function moveSnailRight(){
         ad_iframe.style.width = `${position * c_width / 100 - snailGif.offsetWidth }px`;
 
         console.log(`setting iframe width ${position * c_width / 100} px`);
-        if(position >= 90){
+        if((c_width * position / 100) >= c_width - snailGif.offsetWidth){
             clearInterval(intervalRight);
-            container.removeChild(snailGif);
+            snailGif.parentNode.removeChild(snailGif);
             ad_iframe.style.width = "100%";
         }
     }
@@ -68,7 +72,7 @@ function moveSnailRight(){
     
     
     // Reverse direction if the snail reaches the edges
-    if (position >= 95 || position <= 0) {
+    if ((c_width * position / 100) >= c_width || position <= 0) {
         dir *= -1;
         snailGif.style.transform = `scaleX(${dir})`;
     }

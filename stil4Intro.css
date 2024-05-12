@@ -1,0 +1,127 @@
+
+body {
+    background-color: #F7DEEB;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    background-color: #0B0B3E;
+    text-align: center;
+    color: #F7DEEB;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 1%;
+}
+h2 {
+    color: #F7DEEB;
+}
+
+ul {
+    margin-top: 0;
+    background-color: #B3679B;
+    padding: 1%;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    background-color:  #B3679B;
+    color:#0B0B3E ;
+}
+
+li:hover{
+    background-color:  #4F2358;
+    border: solid 1px #0B0B3E;
+    border-radius: 5%;
+    padding: 1%;
+}
+
+a {
+    color: #F7DEEB;
+    text-decoration: none;
+    padding: 1%;
+}
+.grid-container {
+    display: flex;
+    justify-content: space-around; 
+}
+
+.newText {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.text{
+    color: #0B0B3E;
+    background-image: "pozadina";
+    flex: 1;
+    text-align: center;
+  
+}
+.footer {
+    display: grid;
+    grid-template-rows: auto auto;
+    margin-top: 40px;
+  }
+.nameFooter{
+        display: grid;
+        grid-template-rows: auto auto;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 1%;
+        text-align: right;
+        background-color: #0B0B3E;
+}
+
+.names{
+    color: #F7DEEB;
+}
+
+.button{
+    height: 6%;
+    width: 12%;
+    border-radius: 12px;
+    background-color: #4F2358;
+    padding: 10px;
+    border: 2px solid #4F2358;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    color: #F7DEEB;
+    margin-left: 42%;
+}
+
+.button:link,button:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+
+}
+
+.button:hover {
+    background-color: #B3679B;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgb(0, 0, 0, .2);
+}
+
+.button:active {
+    background-color: #B3679B;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgb(0, 0, 0, .2);
+}
+
+#div1{
+    flex-basis: 15%; 
+}
+
+#div2 {
+    flex-basis: 15%; 
+}
+#div3 {
+    height: 15%;
+}

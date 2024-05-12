@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Our Hackathon Famnit 3.0 Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link  rel="stylesheet" href="stil4Intro.css" type="text/css">
+    </head>
+    <body>
+
+        <header>
+            <h1>Our Hackathon Famnit 3.0 Project</h1>
+            <h2>Inovative ads by The Big Bang Theory</h2>
+        </header>
+
+        <ul>
+            <li><a href="intro.html">idea</a></li>
+            <li><a href="pg2.html">test</a></li>
+            <li><a href="">credits</a></li>
+        </ul>
+
+        <div class="grid-container">
+            <div id="div1">  
+            </div>
+    
+            <div class="text">
+               <h3>How do we create an <span style="font-weight: bold; color: #B3679B;">innovative way</span> to delivere ads online?<span style="font-weight: bold;">?</span> </h3>
+               <p>The ad needs to be different and eye-catching!</p>
+               <p>Flashing colors, puzzles, click me pop-up ads we are already used to...</p>
+               <h3>How about clickbait, but <span style="font-weight: bold; color: #B3679B;">done right?</span></h3>
+               <br>
+
+               <p class="button" onclick="showText()"><a href="#">Click me!</a></p>
+               
+               <div class="newText">
+                <p>Here is the format of advertisements we've come up with:</br> 
+                    Our ads look completely integrated to the webpage</br>  
+                    they are being displayed on using a character sprite</br> 
+                    on a transparent background. It is moving around or </br>
+                    interacting with us in an attention seeking way. </br> 
+                    When hovering on it, or to say giving it </br> 
+                    attention-it pulls down the actual ad.</br> 
+                    These ads are able to interact not only with us,</br> 
+                    but with each other using cookies.</p>
+               </div>
+
+            </div>
+    
+            <div id="div2">
+            </div>
+        </div>
+
+        <div id="div3">
+            
+        </div>
+
+        <script src="ad3.js" type="module"></script>
+
+        <script>
+            function showText() {
+            var newText = document.querySelector('.newText');
+            newText.style.visibility = 'visible';
+            let button = document.querySelector('.button');
+            button.style.visibility = 'hidden';
+            button.style.display="none";
+             };
+        </script>
+
+        <div class="footer">
+        <footer class="nameFooter">
+            <table>
+                <tr>
+                    <th>
+                        <p class="names">Our team: </p>
+                    </th>                        
+                    </td>
+                    <td class="names">
+                    Aleksandra Zečević 
+                    </td>
+                    <td class="names">
+                    Aleksandra Zec 
+                    </td>
+                    <td class="names">
+                    Filip Trajkoski 
+                    </td>
+                    <td class="names">
+                    Simona Cholakova
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </div>
+        
+    </body>
+</html>
