@@ -44,10 +44,11 @@ a{
 #text {
     float: left;
     text-align: left;
-    font-size: 120%;
+    font-size: 110%;
     color: green;
     width: 80%;
     padding: 5%;
+    height: 200px;
 }
 
 footer {
@@ -59,4 +60,7 @@ footer {
 table {
     color: antiquewhite;
     align-self: center;
+}
+#slika img{
+    height: 200px;
 }
