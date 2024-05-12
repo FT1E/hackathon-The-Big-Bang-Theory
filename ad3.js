@@ -88,7 +88,7 @@ for(let i=1; i<=3; i++){
         let ad = document.createElement('img');
         ad.style.width = '100%';
         ad.style.height = '100%';
-        ad.src = 'media/boringad.png';
+        ad.src = 'boringad.png';
         let link = document.createElement('a');
         link.href = '#';
         link.append(ad)
