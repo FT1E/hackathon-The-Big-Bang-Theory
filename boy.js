@@ -5,16 +5,16 @@
 
 export const boy = document.createElement('img');
 boy.style.width = "100%";
+// boy.style.height = "";
 boy.style.position = 'absolute';
 
 const heart = document.createElement('img');
-heart.style.height = "50px";
-heart.style.width = "50px";
 
 heart.style.zIndex = '2';
-heart.src = './media/redheart1.png';
+heart.src = './media/redheart.png';
 heart.style.position = 'absolute';
-heart.style.left = `${Number.parseInt(heart.style.width)}px`;
+heart.style.left = boy.style.left;
+// heart.style.left = `${Number.parseInt(heart.style.width)}px`;
 
 // heart.style.left = `${Number.parseInt(boy.offsetWidth) / 2}px`;
 
@@ -69,16 +69,16 @@ ad_iframe.style.position = 'relative';
 
 export function start(container){
     
-
+    
     console.log(`called start with container ${container}`);
-
-
+    
+    
     container.style.position = 'relative';
 
     // console.log(`checkGirl() = ${checkGirl()}`)
     
     // container.append(ad_iframe);
-
+    
     if(checkGirl()){
         // BOY WITH GIRL
         
@@ -88,6 +88,12 @@ export function start(container){
             boy.src = './media/repeatboy.gif';
             setTimeout(() => {
                 // container.removeChild(boy);
+                
+                heart.style.left = boy.style.left;
+                heart.style.top = boy.style.top;
+                heart.style.width = boy.offsetWidth;
+                heart.style.height = boy.offsetHeight;
+                console.log(`boy offsetWidth ${boy.offsetWidth} and offsetHeight ${boy.offsetHeight}`);
                 container.append(heart);
             }, 5000);
         }, 5000);
@@ -99,11 +105,20 @@ export function start(container){
         boy.src = './media/boyalone.gif';
         setTimeout(() => {
             // container.removeChild(boy);
+            
+            heart.style.left = boy.style.left;
+            heart.style.top = boy.style.top;
+            heart.style.width = boy.offsetWidth;
+            heart.style.height = boy.offsetHeight;
+            console.log(`boy offsetWidth ${boy.offsetWidth} and offsetHeight ${boy.offsetHeight}`);
+                
             container.append(heart);
         }, 5000);
     }
 
     container.append(boy);
+
+
 
 }
 
